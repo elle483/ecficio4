@@ -1,0 +1,79 @@
+<div class="full">
+  
+    <div class="wrapper">
+        
+   
+      <div class="row" style="margin-right: 10px;" >
+        <div class="login-form col-12" style="margin-left: 10px; ">
+    <div class="signup-form">
+        <form  class="form-container" [formGroup]="registrationForm" (ngSubmit)="createCode()">
+            <h2>Events Registration</h2>
+            <p>                    </p>
+            <div class="form-group" >
+                <input type="text" class="form-control" formControlName="name" placeholder="Enter Name" 
+                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                    <p *ngIf="f.name.errors.required">Name is required</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter Email"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <p *ngIf="f.email.errors.required">Email Id is required</p>
+                    <p *ngIf="f.email.errors.pattern">Please provide a valid email-id</p>
+                </div>
+            </div>
+
+            <div class="form-group" >
+                <input type="text" class="form-control" formControlName="college" placeholder="Enter College Name" 
+                [ngClass]="{ 'is-invalid': submitted && f.college.errors }">
+                <div *ngIf="submitted && f.college.errors" class="invalid-feedback">
+                    <p *ngIf="f.college.errors.required">College is required</p>
+                </div>
+            </div>
+
+            <div class="form-group" >
+                <input type="number" class="form-control" formControlName="phone" placeholder="Enter Contact Number " 
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                    <p *ngIf="f.phone.errors.required">Phone is required</p>
+                    <p *ngIf="f.phone.errors.min">phone number should have 10digits</p>
+                    <p *ngIf="f.phone.errors.max">phone number should have 10digits</p>
+                </div>
+            </div>  
+
+            <div class="form-group" >
+                <input type="text" class="form-control" formControlName="rollno" placeholder="Enter College ID "
+                    [ngClass]="{ 'is-invalid': submitted && f.rollno.errors }">
+                <div *ngIf="submitted && f.rollno.errors" class="invalid-feedback">
+                    <p *ngIf="f.rollno.errors.required">Roll No is required</p>
+                </div>
+            </div>   
+
+            <div class="form-group">
+                <p>Amount to be paid : Rs 100</p>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-block btn-outline-light">Pay Now</button>
+            </div>
+        </form>
+        <div class="text-center">Already Registered? <a routerLink='/login'>Login</a></div>
+    </div>
+</div>
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      </div>
+      </div>
